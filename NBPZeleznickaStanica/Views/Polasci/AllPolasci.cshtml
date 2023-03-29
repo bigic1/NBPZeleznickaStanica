@@ -1,0 +1,45 @@
+﻿@model List<Polasci>
+
+@{
+    ViewData["Title"] = "Svi polasci";
+}
+
+<div class="container">
+    <div class="row my-4">
+        <div class="col-12 mx-auto">
+            <h3 class="text-center text-success">@ViewBag.Message</h3>
+        </div>
+    </div>
+</div>
+
+<div class="container d-flex h-75">
+    <div class="row align-self-center w-100">
+        @if (Model != null)
+        {
+            foreach (var polasci in Model)
+            {
+                <div class="col-3 mt-2 d-flex justify-content-center">
+                    <div class="card card-shadow" style="width: 18rem;">
+                        <div class="card-body">
+                            <h5 class="card-title">@polasci.KreceIz</h5>
+                            <h6 class="card-subtitle mb-2 text-muted">@polasci.DolaziU</h6>
+                            <h6 class="card-subtitle mb-2 text-muted">Cena: @polasci.Cena</h6>
+                            <a class="btn btn-primary" asp-controller="Polasci" asp-action="ChangePolasci" asp-route-polasciId="@polasci.Id">Izmeni</a>
+                            <a class="btn btn-danger" asp-controller="Polasci" asp-action="DeletePolasci" asp-route-polasciId="@polasci.Id">Obriši</a>
+                            <a class="btn btn-primary" asp-controller="Polasci" asp-action="DeletePolasci" asp-route-polasciId="@polasci.Id">Rezerviši</a>
+                        </div>
+                    </div>
+                </div>
+            }
+            if (Model.Count == 0)
+            {
+
+                <div class="row align-self-center w-100">
+                    <div class="col-8 mx-auto m-top">
+                        <h3 class="text-center text-light">Trenutno ne postoje polasci</h3>
+                    </div>
+                </div>
+            }
+        }
+    </div>
+</div>

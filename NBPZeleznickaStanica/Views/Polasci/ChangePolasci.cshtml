@@ -1,0 +1,96 @@
+﻿@model Polasci
+
+@{
+    ViewData["Title"] = "Izmena polaska";
+
+}
+
+<div class="container">
+    <div class="row d-flex justify-content-center my-4">
+        <h1 class="text-light">Izmena polaska</h1>
+    </div>
+
+    <div class="row d-flex justify-content-center mb-4">
+        <div class="col-8 col-sm-4">
+            <label style="color:red">Kreće iz</label>
+            <input type="text" class="form-control mb-2" value="@Model.KreceIz" id="polasci-kreceiz">
+        </div>
+        <div class="col-8 col-sm-3">
+            <label style="color:red">Dolazi u</label>
+            <input type="text" class="form-control mb-2" value="@Model.DolaziU" id="polasci-dolaziu">
+        </div>
+        <div class="col-8 col-sm-3">
+            <label style="color:red">Datum i vreme polaska</label>
+            <input type="text" class="form-control mb-2" value="@Model.VremePolaska" id="polasci-vremepolaska">
+        </div>
+        <div class="col-8 col-sm-3">
+            <label style="color:red">Datum i vreme dolaska</label>
+            <input type="text" class="form-control mb-2" value="@Model.VremeDolaska" id="polasci-vremedolaska">
+        </div>
+        <div class="col-8 col-sm-3">
+            <label style="color:red">Kapacitet</label>
+            <input type="number" class="form-control mb-2" value="@Model.Kapacitet" id="polasci-kapacitet">
+        </div>
+        <div class="col-8 col-sm-3">
+            <label style="color:red">Broj rezervacija</label>
+            <input type="number" class="form-control mb-2" value="@Model.BrojRez" id="polasci-brojrez">
+        </div>
+        <div class="col-8 col-sm-3">
+            <label style="color:red">Cena</label>
+            <input type="number" class="form-control mb-2" value="@Model.Cena" id="polasci-cena">
+        </div>
+    </div>
+
+
+
+    <div class="row d-flex justify-content-center mx-4 my-5">
+        <div class="col-12 col-sm-8">
+            <button id="btn-submit-polasci" class="btn w-100 btn-success" onclick="SubmitPolasci()">Sačuvaj polaske</button>
+        </div>
+    </div>
+</div>
+
+<script>
+
+
+    function createElementFromHTML(htmlString) {
+        var div = document.createElement('div');
+        div.innerHTML = htmlString.trim();
+
+        return div.firstChild;
+    }
+
+    function GetPolasciJSON()
+    {
+
+        Polasci = {
+            KreceIz: document.getElementById('polasci-kreceiz').value,
+            DolaziU: document.getElementById('polasci-dolaziu').value,
+            VremePolaska: document.getElementById('polasci-vremepolaska').value,
+            VremeDolaska: document.getElementById('polasci-vremedolaska').value,
+            Kapacitet: document.getElementById('polasci-kapacitet').value,
+            BrojRez: document.getElementById('polasci-brojrez').value,
+            Cena: document.getElementById('polasci-cena').value,
+        }
+        Polasci.Id = "@(Model.Id)"
+
+        return JSON.stringify(Polasci)
+    }
+
+    function SubmitPolasci()
+    {
+        $.ajax({
+            type: "POST",
+            headers: { "Content-Type": "application/json" },
+            url: '@Url.Action("UpdatePolasci", "Polasci")',
+            data: GetPolasciJSON(),
+            success: () => {
+                window.location = "@Url.Action("AllPolasci", "Polasci", new { changed = true })";
+            },
+            error: (e) => {
+                alert("Something went wrong " + e);
+                console.error(e);
+            }
+        });
+    }
+</script>

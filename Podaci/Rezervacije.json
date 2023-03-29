@@ -1,0 +1,73 @@
+[{
+  "_id": {
+    "$oid": "6424978e3d88e5cef47ec179"
+  },
+  "User": {
+    "City": "Bela Palanka",
+    "Email": "boskoigic@elfak.rs",
+    "Password": "bosko",
+    "Phone": "0611",
+    "Username": "bosko",
+    "_id": {
+      "$oid": "6424376dce556a9b66648790"
+    }
+  },
+  "Polazak": {
+    "KreceIz": "Niš",
+    "DolaziU": "Beograd",
+    "Kapacitet": 40,
+    "BrojRez": 0,
+    "Cena": 110,
+    "_id": {
+      "$oid": "642418c4e031cd803aa76560"
+    }
+  }
+},{
+  "_id": {
+    "$oid": "6424ae073d88e5cef47ec18b"
+  },
+  "User": {
+    "City": "Bela Palanka",
+    "Email": "boskoigic@elfak.rs",
+    "Password": "bosko",
+    "Phone": "0611",
+    "Username": "bosko",
+    "_id": {
+      "$oid": "6424376dce556a9b66648790"
+    }
+  },
+  "Polazak": {
+    "KreceIz": "Niš",
+    "DolaziU": "Beograd",
+    "Kapacitet": 40,
+    "BrojRez": 0,
+    "Cena": 110,
+    "_id": {
+      "$oid": "642418c4e031cd803aa76560"
+    }
+  }
+},{
+  "_id": {
+    "$oid": "6424ae883d88e5cef47ec18c"
+  },
+  "User": {
+    "City": "Bela Palanka",
+    "Email": "boskoigic@elfak.rs",
+    "Password": "bosko",
+    "Phone": "0611",
+    "Username": "bosko",
+    "_id": {
+      "$oid": "6424376dce556a9b66648790"
+    }
+  },
+  "Polazak": {
+    "KreceIz": "Niš",
+    "DolaziU": "Beograd",
+    "Kapacitet": 40,
+    "BrojRez": 0,
+    "Cena": 110,
+    "_id": {
+      "$oid": "642418c4e031cd803aa76560"
+    }
+  }
+}]

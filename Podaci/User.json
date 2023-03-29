@@ -1,0 +1,28 @@
+[{
+  "_id": {
+    "$oid": "6201984658332dddc5dd030c"
+  },
+  "Username": "admin",
+  "Password": "admin",
+  "Phone": "0622",
+  "Email": "admin@admin.com",
+  "City": "Admin"
+},{
+  "_id": {
+    "$oid": "6424376dce556a9b66648790"
+  },
+  "Username": "bosko",
+  "Password": "bosko",
+  "Phone": "0611",
+  "Email": "boskoigic@elfak.rs",
+  "City": "Bela Palanka"
+},{
+  "_id": {
+    "$oid": "6424afc2df4138acc85dd45d"
+  },
+  "Username": "miks",
+  "Password": "0000",
+  "Phone": "06122",
+  "Email": "miks@miks.com",
+  "City": "miks"
+}]

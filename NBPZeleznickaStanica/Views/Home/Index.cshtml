@@ -1,0 +1,26 @@
+﻿@using Microsoft.AspNetCore.Http;
+@using NBPZeleznickaStanica.Session;
+
+
+@{
+    ViewData["Title"] = "Početna";
+    string userId = ViewContext.HttpContext.Session.GetString(SessionKeys.UserId) ?? "";
+    bool isLoged = userId.Length > 0;
+}
+
+
+<div class="container d-flex h-75">
+    @if (!isLoged)
+    {
+        <div class="row align-self-center w-100">
+            <div class="col-8 mx-auto m-top">
+                <h3 class="text-center text-dark">Dobrodošli na sajt železničke stanice</h3>
+                <h4 class="text-center text-dark">Da biste mogli da pristupite sajtu, potrebno je da budete registrovani i da se ulogujete</h4>
+            </div>
+        </div>
+    }
+    else
+    {
+        
+    }
+</div>

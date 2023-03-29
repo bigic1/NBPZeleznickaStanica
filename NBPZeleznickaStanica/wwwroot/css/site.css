@@ -1,0 +1,99 @@
+﻿
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  white-space: nowrap;
+  line-height: 60px; /* Vertically center the text there */
+}
+
+
+
+body {
+    background: #FFF;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.main-container {
+    height: 80%;
+}
+
+.navbar {
+    border-bottom-left-radius: 16px;
+    border-bottom-right-radius: 16px;
+}
+
+.navbar-brand {
+    color: #FFC312;
+    font-size: 32px;
+}
+
+.nav-link {
+    color: #000f;
+    /* transition: font-size 0.5s;*/
+    font-size: 20px;
+    transform: scale(1.0);
+    transition: transform 0.3s ease-out;
+}
+
+.text-light {
+    color: #000f;
+}
+
+.nav-link:hover {
+    color: #FFC312;
+    /* transition: font-size 0.5s;
+    font-size: 24px; */
+    transform: scale(1.2);
+    transition: transform 0.3s;
+}
+
+.login-form {
+    font-size: 20px;
+}
+
+.form-bg {
+    background-color: #FFF;
+    border-radius: 8px;
+    box-shadow: 0 4px 16px #0005;
+}
+
+.btn-back {
+    background-color: #1B1464;
+}
+
+.question-card {
+    font-size: 20px;
+}
+
+.btn-plus,
+.btn-plus-q {
+    font-family: none;
+    font-weight: bold;
+    font-size: 32px;
+}
+
+.btn-plus {
+    color: #dfe6e9;
+    background-color: #dfe6e988;
+}
+
+.btn-plus-q {
+    color: #dfe6e9;
+    background-color: #009432;
+    border: 1px solid #009432;
+}
+
+.form-check-input {
+    width: 16px;
+    height: 16px;
+}
+
+.m-top {
+    margin-top: 200px;
+}

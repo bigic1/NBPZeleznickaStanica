@@ -1,0 +1,21 @@
+[{
+  "_id": {
+    "$oid": "642418c4e031cd803aa76560"
+  },
+  "KreceIz": "Niš",
+  "DolaziU": "Beograd",
+  "Kapacitet": 40,
+  "BrojRez": 0,
+  "Cena": 110
+},{
+  "_id": {
+    "$oid": "642467b6f02cc266ee965e52"
+  },
+  "KreceIz": "Nis",
+  "DolaziU": "BG",
+  "VremePolaska": "10:33",
+  "VremeDolaska": "10:56",
+  "Kapacitet": 100,
+  "BrojRez": 0,
+  "Cena": 100
+}]

@@ -1,0 +1,43 @@
+﻿@model List<Rezervacije>
+
+@{
+    ViewData["Title"] = "Sve rezervacije";
+}
+
+<div class="container">
+    <div class="row my-4">
+        <div class="col-12 mx-auto">
+            <h3 class="text-center text-success">@ViewBag.Message</h3>
+        </div>
+    </div>
+</div>
+
+<div class="container d-flex h-75">
+    <div class="row align-self-center w-100">
+        @if (Model != null)
+        {
+            foreach (var rezervacije in Model)
+            {
+                <div class="col-3 mt-2 d-flex justify-content-center">
+                    <div class="card card-shadow" style="width: 18rem;">
+                        <div class="card-body">
+                            <h5 class="card-title">@rezervacije.Polazak.KreceIz</h5>
+                            <h6 class="card-subtitle mb-2 text-muted">@rezervacije.Polazak.DolaziU</h6>
+                            <h6 class="card-subtitle mb-2 text-muted">Cena: @rezervacije.Polazak.Cena</h6>
+                            <a class="btn btn-danger" asp-controller="Rezervacije" asp-action="DeleteRezervacije" asp-route-rezervacijeId="@rezervacije.Id">Obriši</a>
+                        </div>
+                    </div>
+                </div>
+            }
+            if (Model.Count == 0)
+            {
+
+                <div class="row align-self-center w-100">
+                    <div class="col-8 mx-auto m-top">
+                        <h3 class="text-center text-light">Trenutno ne postoje rezervacije</h3>
+                    </div>
+                </div>
+            }
+        }
+    </div>
+</div>

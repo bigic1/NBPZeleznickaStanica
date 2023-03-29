@@ -1,0 +1,91 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - NBPZeleznickaStanica</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+</head>
+
+@using Microsoft.AspNetCore.Http;
+@using NBPZeleznickaStanica.Session;
+@{
+    string userId = ViewContext.HttpContext.Session.GetString(SessionKeys.UserId) ?? "";
+    bool isLoged = userId.Length > 0;
+}
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <a class="navbar-brand" asp-controller="Home" asp-action="Index">Železnička stanica</a>
+
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+                <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                    <li class="nav-item active">
+                        <a class="nav-link" asp-controller="Home" asp-action="Index">Home<span class="sr-only">(current)</span></a>
+                    </li>
+                    @if (isLoged)
+                    {
+
+                        <li class="nav-item">
+                            <a class="nav-link" asp-controller="Polasci" asp-action="Index">Kreiraj polazak</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-controller="Polasci" asp-action="AllPolasci">Svi polasci</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-controller="Rezervacije" asp-action="Rezervacije">Moje rezervacije</a>
+                        </li>
+                    }
+
+                </ul>
+
+                <ul class="navbar-nav my-2 my-lg-0">
+                    @if (isLoged)
+                    {
+                        <li class="nav-item">
+                            <a class="nav-link" asp-controller="User" asp-action="Profile">Profil</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-controller="User" asp-action="Logout">Izloguj se</a>
+                        </li>
+                    }
+                    else
+                    {
+                        <li class="nav-item">
+                            <a class="nav-link" asp-controller="User" asp-action="Login">Prijavi se</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-controller="User" asp-action="Register">Registruj se</a>
+                        </li>
+                    }
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2023 - Zeleznicka stanica - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privatnost</a>
+        </div>
+    </footer>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
